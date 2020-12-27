@@ -1,0 +1,82 @@
+div,p,ul,li{
+    margin:0;
+    padding:0;
+}
+
+.content-wrapper {
+    position: relative;
+    width: 666px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    
+    // 编辑器区域
+    .editor-wrapper {
+        width: 100%;
+        height: 300px;
+        padding: 5px;
+        box-sizing: border-box;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    
+    // 菜单栏区域
+    .menu-wrapper{
+        padding: 3px;
+        height: 30px;
+        border-bottom: 1px solid #ccc;
+
+        .menu-item {
+            position:relative;
+            float: left;
+            padding: 3px;
+            list-style: none;
+            margin-right: 3px;
+
+            &:hover{
+                .menu-item-child{
+                    display: flex;
+                }
+            }
+
+            .menu-item-child{
+                position: absolute;
+                display: none;
+                width: 30px;
+                flex-wrap: wrap;
+                text-align: center;
+                padding: 3px 0 3px 12px;
+                background-color: #fff;
+                border: 1px solid #eee;
+
+                span{
+                    height: 20px;
+
+                    &:hover{
+                        color: skyblue;
+                    }
+                }
+            }
+
+            .icon-red{
+                color:red;
+            }
+            .icon-blue{
+                color:blue;
+            }
+            .icon-yellow{
+                color:rgb(192, 192, 47)
+            }
+            .icon-green{
+                color:green
+            }
+
+        
+        }
+    }
+}
+
+.active {
+    border: 1px solid skyblue;
+}

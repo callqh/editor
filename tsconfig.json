@@ -7,12 +7,12 @@
     "checkJs": false,
     "declaration": true,
     "sourceMap": true,
-    "outDir": "./out/",
+    "outDir": "./dist/",
     "removeComments": true,
     "strict": true,
     "noImplicitAny": false,
     "baseUrl": "./",
     "esModuleInterop": true
   },
-  "exclude": ["dist", "out", "*.config.js"]
+  "exclude": ["dist", "*.config.js"]
 }
