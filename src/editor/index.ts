@@ -40,6 +40,7 @@ class editor {
             if (e.keyCode === 8) {
                 // 防止用户上来就按删除键，造成的文本无法被p标签包裹的问题
                 if (!this.editorElement?.innerHTML) {
+                    cachedRange = null
                     this.createPlaceholder()
                 }
             } else if (e.keyCode === 13) {

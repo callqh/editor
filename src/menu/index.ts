@@ -21,7 +21,6 @@ class Menu {
         ulElem.classList.add('menu-wrapper')
         this.btnList?.forEach(_item => {
             const liElem = createElem('li', `menu-item iconfont icon-${_item.icon}`)
-            liElem.setAttribute('flag', _item.flag!)
             // 利用事件委托绑定事件
             this.bindEvent(liElem)
             // 添加自定义属性
@@ -53,6 +52,8 @@ class Menu {
     public bindEvent(element: HTMLElement): void {
         element.addEventListener('click', e => {
             const clickElem = e.target as HTMLElement
+            const selection = window.getSelection()
+            selection?.removeAllRanges()
             if (!cachedRange) {
                 // 没有选中元素的情况下，就新建range，使之后输入的文字应用新的规则
                 // 需要注意的是这里需要把光标移动到末尾
@@ -76,6 +77,7 @@ class Menu {
      * 处理各个菜单项命令
      */
     public handleCommand(target: HTMLElement): void {
+        // command_KV : ["foreColor", "red"]
         const command_KV: string[] = target?.getAttribute('command')?.split('-')!
         command_KV?.length && document.execCommand(command_KV[0], false, command_KV[1] || undefined)
     }

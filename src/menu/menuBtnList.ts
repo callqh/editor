@@ -1,14 +1,15 @@
 export interface MenuBtnListProps {
+    /** 命令 */
     command?: string
+    /** 图标 */
     icon: string
+    /** 子元素 */
     children?: MenuBtnListProps[]
-    flag?: string
 }
 // 菜单项的按钮
 export const menuList: MenuBtnListProps[] = [
     {
         icon: 'heading',
-        flag: 'fontSizeFlag',
         children: [
             { icon: 'h-1', command: 'fontSize-6' },
             { icon: 'h-2', command: 'fontSize-5' },
@@ -20,12 +21,10 @@ export const menuList: MenuBtnListProps[] = [
     },
     {
         command: 'bold',
-        flag: 'boldFlag',
         icon: 'bold',
     },
     {
         icon: 'font-color',
-        flag: 'colorFlag',
         children: [
             { icon: 'font-color', command: 'foreColor-black' },
             { icon: 'red', command: 'foreColor-red' },
